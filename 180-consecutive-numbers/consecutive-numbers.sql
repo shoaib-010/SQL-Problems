@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select distinct num as ConsecutiveNums from (select num, lag(num,1) over (order by id) as prev1, lag(num,2) over (order by id) as prev2 from logs) t  where num = prev1 and prev1=prev2 # ye t aik table bn gaya ha jis mein ye teen number row mein agay hain
